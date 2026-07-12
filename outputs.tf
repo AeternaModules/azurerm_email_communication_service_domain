@@ -1,3 +1,7 @@
+output "email_communication_service_domains_id" {
+  description = "Map of id values across all email_communication_service_domains, keyed the same as var.email_communication_service_domains"
+  value       = { for k, v in azurerm_email_communication_service_domain.email_communication_service_domains : k => v.id }
+}
 output "email_communication_service_domains_domain_management" {
   description = "Map of domain_management values across all email_communication_service_domains, keyed the same as var.email_communication_service_domains"
   value       = { for k, v in azurerm_email_communication_service_domain.email_communication_service_domains : k => v.domain_management }
